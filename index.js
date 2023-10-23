@@ -86,17 +86,35 @@ const titles = [
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
-
+books.forEach((book)=>console.log(book.authorFirst + ' ' + book.authorLast + ' wrote ' + book.name + ' in ' + book.publishDate))
 //Sort books from oldest to most recent
-
+books.sort((a, b) => a.publishDate - b.publishDate)
+books.forEach((book)=>console.log(book.name))
 //sort books alphabetically
-
+titles.sort()
+console.log(titles)
 //Find who wrote War and Peace
-
+console.log(books[5].authorFirst,books[5].authorLast)
 //how many books were written before 1900?
 
 //was there at least one book published within the last 100 years?
-
+bookpublish100 = 'There were no books published within the last 100 years.'
+books.forEach((book)=>{
+  if ((2023-book.publishDate) < 100) {
+    bookpublish100 = 'There was at least one book published within the last 100 years.'
+}})
+console.log(bookpublish100)
 //was every book published within the last 100 years?
-
+bookpublish100all = 'Every book was published within the last 100 years.'
+books.forEach((book)=>{
+  if ((2023-book.publishDate) > 100) {
+    bookpublish100all = 'Not every book was published within the last 100 years.'
+}})
+console.log(bookpublish100all)
 //print a list of books that "includes" the genre historical
+historical=[]
+books.forEach((book)=>{
+  if (book.genre.includes('historical')) {
+    historical.push(book.name)
+}})
+console.log(historical)
