@@ -98,12 +98,12 @@ console.log(books[5].authorFirst,books[5].authorLast)
 //how many books were written before 1900?
 
 //was there at least one book published within the last 100 years?
-bookpublish100 = 'There were no books published within the last 100 years.'
+bookpublish100years = 'There were no books published within the last 100 years.'
 books.forEach((book)=>{
   if ((2023-book.publishDate) < 100) {
-    bookpublish100 = 'There was at least one book published within the last 100 years.'
+    bookpublish100years = 'There was at least one book published within the last 100 years.'
 }})
-console.log(bookpublish100)
+console.log(bookpublish100years)
 //was every book published within the last 100 years?
 bookpublish100all = 'Every book was published within the last 100 years.'
 books.forEach((book)=>{
